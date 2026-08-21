@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('age_range');
-            $table->string('gender');
+            $table->string('gender')->nullable();
             $table->string('message')->nullable();
             $table->foreignId('guardian_id')->constrained('guardians')->onDelete('cascade');
             $table->timestamps();
