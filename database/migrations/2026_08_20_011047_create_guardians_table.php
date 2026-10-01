@@ -21,6 +21,7 @@ return new class extends Migration
             $table->timestamp('authorization_date')->nullable();
             $table->string('political_version')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

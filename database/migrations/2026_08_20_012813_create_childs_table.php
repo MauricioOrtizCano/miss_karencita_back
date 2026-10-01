@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('message')->nullable();
             $table->foreignId('guardian_id')->constrained('guardians')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Miss Karencita'),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,6 +123,8 @@ return [
     */
 
     'key' => env('APP_KEY'),
+
+    'policy_version' => env('POLICY_VERSION', 'v1.0'),
 
     'cipher' => 'AES-256-CBC',
 

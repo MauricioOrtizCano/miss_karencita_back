@@ -28,6 +28,19 @@ class Guardian extends Model
         'authorization_date' => 'datetime',
     ];
 
+    protected static function booted()
+    {
+        static::deleting(function ($guardian) {
+            if (!$guardian->isForceDeleting()) {
+                $guardian->children()->delete();
+            }
+        });
+
+        static::restoring(function ($guardian) {
+            $guardian->children()->restore();
+        });
+    }
+
     public function children(): HasMany
     {
         return $this->hasMany(Child::class, 'guardian_id');
